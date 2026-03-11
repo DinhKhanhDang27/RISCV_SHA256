@@ -1,0 +1,520 @@
+Analysis & Synthesis report for riscv_top
+Wed Mar 11 12:52:26 2026
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |riscv_top|sha256:u_sha256|state
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Port Connectivity Checks: "adder:u_jalr_adder"
+ 14. Port Connectivity Checks: "adder:u_pc_adder"
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Mar 11 12:52:25 2026           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; riscv_top                                       ;
+; Top-level Entity Name              ; riscv_top                                       ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 42,445                                          ;
+;     Total combinational functions  ; 22,188                                          ;
+;     Dedicated logic registers      ; 21,519                                          ;
+; Total registers                    ; 21519                                           ;
+; Total pins                         ; 130                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; riscv_top          ; riscv_top          ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                      ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                        ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
+; alu.v                            ; yes             ; User Verilog HDL File  ; D:/STUDY/DOAN_THAYNGUYEN/code2/alu.v                ;         ;
+; alu_control.v                    ; yes             ; User Verilog HDL File  ; D:/STUDY/DOAN_THAYNGUYEN/code2/alu_control.v        ;         ;
+; register_file.v                  ; yes             ; User Verilog HDL File  ; D:/STUDY/DOAN_THAYNGUYEN/code2/register_file.v      ;         ;
+; instruction_memory.v             ; yes             ; User Verilog HDL File  ; D:/STUDY/DOAN_THAYNGUYEN/code2/instruction_memory.v ;         ;
+; data_memory.v                    ; yes             ; User Verilog HDL File  ; D:/STUDY/DOAN_THAYNGUYEN/code2/data_memory.v        ;         ;
+; pc_register.v                    ; yes             ; User Verilog HDL File  ; D:/STUDY/DOAN_THAYNGUYEN/code2/pc_register.v        ;         ;
+; adder.v                          ; yes             ; User Verilog HDL File  ; D:/STUDY/DOAN_THAYNGUYEN/code2/adder.v              ;         ;
+; imm_gen.v                        ; yes             ; User Verilog HDL File  ; D:/STUDY/DOAN_THAYNGUYEN/code2/imm_gen.v            ;         ;
+; control_unit.v                   ; yes             ; User Verilog HDL File  ; D:/STUDY/DOAN_THAYNGUYEN/code2/control_unit.v       ;         ;
+; branch_control.v                 ; yes             ; User Verilog HDL File  ; D:/STUDY/DOAN_THAYNGUYEN/code2/branch_control.v     ;         ;
+; mux.v                            ; yes             ; User Verilog HDL File  ; D:/STUDY/DOAN_THAYNGUYEN/code2/mux.v                ;         ;
+; riscv_top.v                      ; yes             ; User Verilog HDL File  ; D:/STUDY/DOAN_THAYNGUYEN/code2/riscv_top.v          ;         ;
+; sha256.v                         ; yes             ; User Verilog HDL File  ; D:/STUDY/DOAN_THAYNGUYEN/code2/sha256.v             ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------+---------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 42,445 ;
+;                                             ;        ;
+; Total combinational functions               ; 22188  ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 17871  ;
+;     -- 3 input functions                    ; 3884   ;
+;     -- <=2 input functions                  ; 433    ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 21185  ;
+;     -- arithmetic mode                      ; 1003   ;
+;                                             ;        ;
+; Total registers                             ; 21519  ;
+;     -- Dedicated logic registers            ; 21519  ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 130    ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+; Maximum fan-out node                        ; clk    ;
+; Maximum fan-out                             ; 21519  ;
+; Total fan-out                               ; 151697 ;
+; Average fan-out                             ; 3.46   ;
++---------------------------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                     ;
++-----------------------------------+-------------------+---------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
+; Compilation Hierarchy Node        ; LC Combinationals ; LC Registers  ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Library Name ;
++-----------------------------------+-------------------+---------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
+; |riscv_top                        ; 22188 (11)        ; 21519 (0)     ; 0           ; 0            ; 0       ; 0         ; 130  ; 0            ; |riscv_top                              ; work         ;
+;    |adder:u_branch_adder|         ; 64 (64)           ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |riscv_top|adder:u_branch_adder         ; work         ;
+;    |adder:u_jalr_adder|           ; 65 (65)           ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |riscv_top|adder:u_jalr_adder           ; work         ;
+;    |adder:u_pc_adder|             ; 62 (62)           ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |riscv_top|adder:u_pc_adder             ; work         ;
+;    |alu:u_alu|                    ; 1542 (1542)       ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |riscv_top|alu:u_alu                    ; work         ;
+;    |alu_control:u_alu_ctrl|       ; 9 (9)             ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |riscv_top|alu_control:u_alu_ctrl       ; work         ;
+;    |branch_control:u_branch_ctrl| ; 1 (1)             ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |riscv_top|branch_control:u_branch_ctrl ; work         ;
+;    |control_unit:u_control|       ; 11 (11)           ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |riscv_top|control_unit:u_control       ; work         ;
+;    |data_memory:u_dmem|           ; 450 (450)         ; 16384 (16384) ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |riscv_top|data_memory:u_dmem           ; work         ;
+;    |imm_gen:u_immgen|             ; 70 (70)           ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |riscv_top|imm_gen:u_immgen             ; work         ;
+;    |instruction_memory:u_imem|    ; 137 (137)         ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |riscv_top|instruction_memory:u_imem    ; work         ;
+;    |mux2to1:u_alu_mux_b|          ; 118 (118)         ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |riscv_top|mux2to1:u_alu_mux_b          ; work         ;
+;    |mux2to1:u_wb_alu_mem|         ; 3 (3)             ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |riscv_top|mux2to1:u_wb_alu_mem         ; work         ;
+;    |mux4to1:u_wb_mux|             ; 11225 (11225)     ; 0 (0)         ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |riscv_top|mux4to1:u_wb_mux             ; work         ;
+;    |pc_register:u_pc|             ; 62 (62)           ; 64 (64)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |riscv_top|pc_register:u_pc             ; work         ;
+;    |register_file:u_regfile|      ; 2810 (2810)       ; 1984 (1984)   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |riscv_top|register_file:u_regfile      ; work         ;
+;    |sha256:u_sha256|              ; 5548 (5548)       ; 3087 (3087)   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |riscv_top|sha256:u_sha256              ; work         ;
++-----------------------------------+-------------------+---------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------+
+; State Machine - |riscv_top|sha256:u_sha256|state                                                         ;
++-----------------+-------------+----------------+--------------+-----------------+-----------+------------+
+; Name            ; state.FINAL ; state.COMPRESS ; state.EXPAND ; state.INIT_HASH ; state.PAD ; state.IDLE ;
++-----------------+-------------+----------------+--------------+-----------------+-----------+------------+
+; state.IDLE      ; 0           ; 0              ; 0            ; 0               ; 0         ; 0          ;
+; state.PAD       ; 0           ; 0              ; 0            ; 0               ; 1         ; 1          ;
+; state.INIT_HASH ; 0           ; 0              ; 0            ; 1               ; 0         ; 1          ;
+; state.EXPAND    ; 0           ; 0              ; 1            ; 0               ; 0         ; 1          ;
+; state.COMPRESS  ; 0           ; 1              ; 0            ; 0               ; 0         ; 1          ;
+; state.FINAL     ; 1           ; 0              ; 0            ; 0               ; 0         ; 1          ;
++-----------------+-------------+----------------+--------------+-----------------+-----------+------------+
+
+
++----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                     ;
++------------------------------------------+---------------------------------------------+
+; Register name                            ; Reason for Removal                          ;
++------------------------------------------+---------------------------------------------+
+; register_file:u_regfile|registers[0][0]  ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][63] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][62] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][61] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][60] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][59] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][58] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][57] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][56] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][55] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][54] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][53] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][52] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][51] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][50] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][49] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][48] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][47] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][46] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][45] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][44] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][43] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][42] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][41] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][40] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][39] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][38] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][37] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][36] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][35] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][34] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][33] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][32] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][31] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][30] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][29] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][28] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][27] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][26] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][25] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][24] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][23] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][22] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][21] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][20] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][19] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][18] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][17] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][16] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][15] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][14] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][13] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][12] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][11] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][10] ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][9]  ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][8]  ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][7]  ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][6]  ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][5]  ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][4]  ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][3]  ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][2]  ; Stuck at GND due to stuck port clock_enable ;
+; register_file:u_regfile|registers[0][1]  ; Stuck at GND due to stuck port clock_enable ;
+; sha256:u_sha256|state~10                 ; Lost fanout                                 ;
+; sha256:u_sha256|state~11                 ; Lost fanout                                 ;
+; sha256:u_sha256|state~12                 ; Lost fanout                                 ;
+; Total Number of Removed Registers = 67   ;                                             ;
++------------------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                   ;
++-----------------------------------------+--------------------------------+------------------------------------------------------------------------------------+
+; Register name                           ; Reason for Removal             ; Registers Removed due to This Register                                             ;
++-----------------------------------------+--------------------------------+------------------------------------------------------------------------------------+
+; register_file:u_regfile|registers[0][0] ; Stuck at GND                   ; register_file:u_regfile|registers[0][63], register_file:u_regfile|registers[0][32] ;
+;                                         ; due to stuck port clock_enable ;                                                                                    ;
++-----------------------------------------+--------------------------------+------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 21519 ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 126   ;
+; Number of registers using Asynchronous Clear ; 2831  ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 21448 ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; 3:1                ; 62 bits   ; 124 LEs       ; 124 LEs              ; 0 LEs                  ; Yes        ; |riscv_top|pc_register:u_pc|pc_out[2]             ;
+; 3:1                ; 136 bits  ; 272 LEs       ; 136 LEs              ; 136 LEs                ; Yes        ; |riscv_top|sha256:u_sha256|H4[28]                 ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|W[15][20]              ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|W[14][18]              ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|W[13][14]              ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|W[12][14]              ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|W[11][10]              ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|W[10][6]               ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|W[9][10]               ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|W[8][15]               ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|W[7][22]               ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|W[6][21]               ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|W[5][23]               ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|W[4][0]                ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|W[3][23]               ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|W[2][23]               ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|W[1][23]               ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|W[0][23]               ;
+; 5:1                ; 256 bits  ; 768 LEs       ; 256 LEs              ; 512 LEs                ; Yes        ; |riscv_top|sha256:u_sha256|g[10]                  ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |riscv_top|sha256:u_sha256|round[5]               ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |riscv_top|sha256:u_sha256|Mux128                 ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |riscv_top|sha256:u_sha256|Mux96                  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |riscv_top|wb_sel[1]                              ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |riscv_top|imm_gen:u_immgen|Selector6             ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |riscv_top|sha256:u_sha256|Mux84                  ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |riscv_top|sha256:u_sha256|Mux52                  ;
+; 5:1                ; 64 bits   ; 192 LEs       ; 192 LEs              ; 0 LEs                  ; No         ; |riscv_top|sha256:u_sha256|Mux82                  ;
+; 5:1                ; 128 bits  ; 384 LEs       ; 384 LEs              ; 0 LEs                  ; No         ; |riscv_top|sha256:u_sha256|Mux151                 ;
+; 5:1                ; 14 bits   ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; No         ; |riscv_top|imm_gen:u_immgen|Selector14            ;
+; 6:1                ; 128 bits  ; 512 LEs       ; 512 LEs              ; 0 LEs                  ; No         ; |riscv_top|sha256:u_sha256|Mux132                 ;
+; 33:1               ; 64 bits   ; 1408 LEs      ; 1408 LEs             ; 0 LEs                  ; No         ; |riscv_top|register_file:u_regfile|read_data1[21] ;
+; 33:1               ; 64 bits   ; 1408 LEs      ; 1408 LEs             ; 0 LEs                  ; No         ; |riscv_top|register_file:u_regfile|read_data2[44] ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |riscv_top|imm_gen:u_immgen|Selector21            ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |riscv_top|sha256:u_sha256|Selector70             ;
+; 19:1               ; 16 bits   ; 192 LEs       ; 112 LEs              ; 80 LEs                 ; No         ; |riscv_top|alu:u_alu|Mux47                        ;
+; 20:1               ; 15 bits   ; 195 LEs       ; 120 LEs              ; 75 LEs                 ; No         ; |riscv_top|alu:u_alu|Mux17                        ;
+; 20:1               ; 8 bits    ; 104 LEs       ; 64 LEs               ; 40 LEs                 ; No         ; |riscv_top|alu:u_alu|Mux52                        ;
+; 21:1               ; 8 bits    ; 112 LEs       ; 72 LEs               ; 40 LEs                 ; No         ; |riscv_top|alu:u_alu|Mux11                        ;
+; 10:1               ; 32 bits   ; 192 LEs       ; 192 LEs              ; 0 LEs                  ; No         ; |riscv_top|sha256:u_sha256|Mux88                  ;
+; 21:1               ; 4 bits    ; 56 LEs        ; 32 LEs               ; 24 LEs                 ; No         ; |riscv_top|alu:u_alu|Mux59                        ;
+; 22:1               ; 4 bits    ; 56 LEs        ; 36 LEs               ; 20 LEs                 ; No         ; |riscv_top|alu:u_alu|Mux4                         ;
+; 22:1               ; 2 bits    ; 28 LEs        ; 18 LEs               ; 10 LEs                 ; No         ; |riscv_top|alu:u_alu|Mux61                        ;
+; 23:1               ; 2 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |riscv_top|alu:u_alu|Mux3                         ;
+; 20:1               ; 32 bits   ; 416 LEs       ; 416 LEs              ; 0 LEs                  ; No         ; |riscv_top|sha256:u_sha256|Mux85                  ;
+; 518:1              ; 63 bits   ; 21735 LEs     ; 11151 LEs            ; 10584 LEs              ; No         ; |riscv_top|mux4to1:u_wb_mux|Mux34                 ;
+; 36:1               ; 32 bits   ; 768 LEs       ; 768 LEs              ; 0 LEs                  ; No         ; |riscv_top|sha256:u_sha256|Mux17                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "adder:u_jalr_adder"                                                                      ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; result[0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "adder:u_pc_adder" ;
++----------+-------+----------+----------------+
+; Port     ; Type  ; Severity ; Details        ;
++----------+-------+----------+----------------+
+; b[63..3] ; Input ; Info     ; Stuck at GND   ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND   ;
+; b[2]     ; Input ; Info     ; Stuck at VCC   ;
++----------+-------+----------+----------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:04:12     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Mar 11 12:47:57 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off riscv_top -c riscv_top
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file alu.v
+    Info (12023): Found entity 1: alu
+Info (12021): Found 1 design units, including 1 entities, in source file alu_control.v
+    Info (12023): Found entity 1: alu_control
+Info (12021): Found 1 design units, including 1 entities, in source file register_file.v
+    Info (12023): Found entity 1: register_file
+Info (12021): Found 1 design units, including 1 entities, in source file instruction_memory.v
+    Info (12023): Found entity 1: instruction_memory
+Info (12021): Found 1 design units, including 1 entities, in source file data_memory.v
+    Info (12023): Found entity 1: data_memory
+Info (12021): Found 1 design units, including 1 entities, in source file pc_register.v
+    Info (12023): Found entity 1: pc_register
+Info (12021): Found 1 design units, including 1 entities, in source file adder.v
+    Info (12023): Found entity 1: adder
+Info (12021): Found 1 design units, including 1 entities, in source file imm_gen.v
+    Info (12023): Found entity 1: imm_gen
+Info (12021): Found 1 design units, including 1 entities, in source file control_unit.v
+    Info (12023): Found entity 1: control_unit
+Info (12021): Found 1 design units, including 1 entities, in source file branch_control.v
+    Info (12023): Found entity 1: branch_control
+Info (12021): Found 2 design units, including 2 entities, in source file mux.v
+    Info (12023): Found entity 1: mux2to1
+    Info (12023): Found entity 2: mux4to1
+Info (12021): Found 1 design units, including 1 entities, in source file riscv_top.v
+    Info (12023): Found entity 1: riscv_top
+Info (12021): Found 1 design units, including 1 entities, in source file sha256.v
+    Info (12023): Found entity 1: sha256
+Info (12127): Elaborating entity "riscv_top" for the top level hierarchy
+Info (12128): Elaborating entity "pc_register" for hierarchy "pc_register:u_pc"
+Info (12128): Elaborating entity "adder" for hierarchy "adder:u_pc_adder"
+Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:u_imem"
+Warning (10030): Net "mem.data_a" at instruction_memory.v(12) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "mem.waddr_a" at instruction_memory.v(12) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "mem.we_a" at instruction_memory.v(12) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:u_control"
+Info (12128): Elaborating entity "register_file" for hierarchy "register_file:u_regfile"
+Info (12128): Elaborating entity "imm_gen" for hierarchy "imm_gen:u_immgen"
+Info (12128): Elaborating entity "alu_control" for hierarchy "alu_control:u_alu_ctrl"
+Info (12128): Elaborating entity "mux2to1" for hierarchy "mux2to1:u_alu_mux_b"
+Info (12128): Elaborating entity "alu" for hierarchy "alu:u_alu"
+Info (12128): Elaborating entity "branch_control" for hierarchy "branch_control:u_branch_ctrl"
+Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:u_dmem"
+Info (12128): Elaborating entity "sha256" for hierarchy "sha256:u_sha256"
+Warning (10036): Verilog HDL or VHDL warning at sha256.v(46): object "msg_bit_len" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at sha256.v(106): object "expand_done" assigned a value but never read
+Warning (10240): Verilog HDL Always Construct warning at sha256.v(152): inferring latch(es) for variable "idx", which holds its previous value in one or more paths through the always construct
+Warning (10030): Net "K.data_a" at sha256.v(54) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "K.waddr_a" at sha256.v(54) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "K.we_a" at sha256.v(54) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:u_wb_mux"
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/STUDY/DOAN_THAYNGUYEN/code2/db/riscv_top.ram0_instruction_memory_68fd8bb8.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file D:/STUDY/DOAN_THAYNGUYEN/code2/riscv_top.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 42737 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 128 output pins
+    Info (21061): Implemented 42607 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4725 megabytes
+    Info: Processing ended: Wed Mar 11 12:52:26 2026
+    Info: Elapsed time: 00:04:29
+    Info: Total CPU time (on all processors): 00:04:02
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/STUDY/DOAN_THAYNGUYEN/code2/riscv_top.map.smsg.
+
+

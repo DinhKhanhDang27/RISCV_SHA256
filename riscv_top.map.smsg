@@ -1,0 +1,4 @@
+Warning (10268): Verilog HDL information at register_file.v(26): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at sha256.v(235): always construct contains both blocking and non-blocking assignments
+Info (10281): Verilog HDL Declaration information at sha256.v(117): object "sigma0" differs only in case from object "Sigma0" in the same scope
+Info (10281): Verilog HDL Declaration information at sha256.v(122): object "sigma1" differs only in case from object "Sigma1" in the same scope

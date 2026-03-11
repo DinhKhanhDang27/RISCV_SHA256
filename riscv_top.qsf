@@ -1,0 +1,42 @@
+# RISC-V 64-bit Single-Cycle Datapath
+# Quartus II Project File for Cyclone II
+
+# Device Assignment - Cyclone II
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C35F672C6
+set_global_assignment -name TOP_LEVEL_ENTITY riscv_top
+
+# Source Files
+set_global_assignment -name VERILOG_FILE alu.v
+set_global_assignment -name VERILOG_FILE alu_control.v
+set_global_assignment -name VERILOG_FILE register_file.v
+set_global_assignment -name VERILOG_FILE instruction_memory.v
+set_global_assignment -name VERILOG_FILE data_memory.v
+set_global_assignment -name VERILOG_FILE pc_register.v
+set_global_assignment -name VERILOG_FILE adder.v
+set_global_assignment -name VERILOG_FILE imm_gen.v
+set_global_assignment -name VERILOG_FILE control_unit.v
+set_global_assignment -name VERILOG_FILE branch_control.v
+set_global_assignment -name VERILOG_FILE mux.v
+set_global_assignment -name VERILOG_FILE riscv_top.v
+set_global_assignment -name VERILOG_FILE sha256.v
+
+# Timing
+set_global_assignment -name FMAX_REQUIREMENT "50 MHz"
+
+# Pin assignments (directly map to DE2 board or generic)
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+
+# Compilation settings
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

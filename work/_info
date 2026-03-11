@@ -1,0 +1,363 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/STUDY/DOAN_THAYNGUYEN/code2
+vadder
+Z1 !s110 1773207944
+!i10b 1
+!s100 >?Qzn=>7aHVO[CWGJF7h63
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ifi<YoW0W66fT]Y=jXR[k93
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1772898314
+8adder.v
+Fadder.v
+!i122 64
+L0 4 9
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1773207944.000000
+!s107 adder.v|
+!s90 adder.v|
+!i113 1
+Z7 tCvgOpt 0
+valu
+!s110 1773207942
+!i10b 1
+!s100 Mnm=o_F:CHm7:IO74XFf81
+R2
+IPSN_E=ze<[_XX_3<R@MWU1
+R3
+R0
+w1772898234
+8alu.v
+Falu.v
+!i122 58
+L0 5 27
+R5
+r1
+!s85 0
+31
+!s108 1773207942.000000
+!s107 alu.v|
+!s90 alu.v|
+!i113 1
+R7
+valu_control
+Z8 !s110 1773207943
+!i10b 1
+!s100 @;cFR2THgfNTCV8[_6lFC2
+R2
+I>OU<mZ7g3nQClXFY@LlZT2
+R3
+R0
+w1772898359
+8alu_control.v
+Falu_control.v
+!i122 59
+L0 5 60
+R5
+r1
+!s85 0
+31
+Z9 !s108 1773207943.000000
+!s107 alu_control.v|
+!s90 alu_control.v|
+!i113 1
+R7
+vbranch_control
+R1
+!i10b 1
+!s100 AXX[fz9k;OzWC4Fi70ggG3
+R2
+I87:n1XTe4AY]423``L[HC1
+R3
+R0
+Z10 w1772898376
+8branch_control.v
+Fbranch_control.v
+!i122 67
+L0 5 25
+R5
+r1
+!s85 0
+31
+R6
+!s107 branch_control.v|
+!s90 branch_control.v|
+!i113 1
+R7
+vcontrol_unit
+R1
+!i10b 1
+!s100 YVc:d9j?TVQZPHlaGRUWH2
+R2
+IYc>D54PL6j2j7:Y6TjFKo0
+R3
+R0
+w1772898340
+8control_unit.v
+Fcontrol_unit.v
+!i122 66
+L0 6 89
+R5
+r1
+!s85 0
+31
+R6
+!s107 control_unit.v|
+!s90 control_unit.v|
+!i113 1
+R7
+vdata_memory
+R8
+!i10b 1
+!s100 L>OH;5_f`W9EMjJ<XE_AO2
+R2
+IiQb37AYDH>OVAX9A=3lk]0
+R3
+R0
+R4
+8data_memory.v
+Fdata_memory.v
+!i122 62
+L0 6 48
+R5
+r1
+!s85 0
+31
+R9
+!s107 data_memory.v|
+!s90 data_memory.v|
+!i113 1
+R7
+vimm_gen
+R1
+!i10b 1
+!s100 ]B40[klT4URS=lY3j9of92
+R2
+I]X5kee04mh`TEdMOO:Y[13
+R3
+R0
+w1772898320
+8imm_gen.v
+Fimm_gen.v
+!i122 65
+L0 6 42
+R5
+r1
+!s85 0
+31
+R6
+!s107 imm_gen.v|
+!s90 imm_gen.v|
+!i113 1
+R7
+vinstruction_memory
+R8
+!i10b 1
+!s100 mfdE;Q^VlnRI?74c4W[Fa0
+R2
+I12;nKP:K`d=18MCG4Y0b;1
+R3
+R0
+w1772937917
+8instruction_memory.v
+Finstruction_memory.v
+!i122 61
+L0 7 160
+R5
+r1
+!s85 0
+31
+R9
+!s107 instruction_memory.v|
+!s90 instruction_memory.v|
+!i113 1
+R7
+vmux2to1
+Z11 !s110 1773207945
+!i10b 1
+!s100 GTJzDCDQW]L`_Amd`2XV?0
+R2
+Idd;i_M4>]HFEmSRIX@=z=2
+R3
+R0
+R10
+Z12 8mux.v
+Z13 Fmux.v
+!i122 68
+L0 4 10
+R5
+r1
+!s85 0
+31
+Z14 !s108 1773207945.000000
+Z15 !s107 mux.v|
+Z16 !s90 mux.v|
+!i113 1
+R7
+vmux4to1
+R11
+!i10b 1
+!s100 hVkW1bi^TJNPHF8kWcX7;0
+R2
+II?[R]X_WiRVXkzADM9?zE0
+R3
+R0
+R10
+R12
+R13
+!i122 68
+L0 18 20
+R5
+r1
+!s85 0
+31
+R14
+R15
+R16
+!i113 1
+R7
+vpc_register
+R1
+!i10b 1
+!s100 59a]>7nS?R=2CDh@:bOmX0
+R2
+IoFKb>WkV53<9PFOYzkEIE0
+R3
+R0
+R4
+8pc_register.v
+Fpc_register.v
+!i122 63
+L0 4 15
+R5
+r1
+!s85 0
+31
+R6
+!s107 pc_register.v|
+!s90 pc_register.v|
+!i113 1
+R7
+vregister_file
+R8
+!i10b 1
+!s100 QFH0bAKTTF:chAP5[2mi=3
+R2
+IiY[LIjH3J`VLL44UZNGB@3
+R3
+R0
+Z17 w1772956022
+8register_file.v
+Fregister_file.v
+!i122 60
+L0 6 32
+R5
+r1
+!s85 0
+31
+R9
+!s107 register_file.v|
+!s90 register_file.v|
+!i113 1
+R7
+vriscv_tb
+R11
+!i10b 1
+!s100 6kjkW>amIgGiEJgc:ZA?Y0
+R2
+Ia]cUWYP<DKIXlUB62C0F=0
+R3
+R0
+w1772900537
+8riscv_tb.v
+Friscv_tb.v
+!i122 71
+L0 7 172
+R5
+r1
+!s85 0
+31
+R14
+!s107 riscv_tb.v|
+!s90 riscv_tb.v|
+!i113 1
+R7
+vriscv_top
+R11
+!i10b 1
+!s100 zl_HI0H:e3RI936d6c>h?2
+R2
+I_D>dF[zVL:VCeV:z[KhJ@2
+R3
+R0
+R17
+8riscv_top.v
+Friscv_top.v
+!i122 70
+L0 7 280
+R5
+r1
+!s85 0
+31
+R14
+!s107 riscv_top.v|
+!s90 riscv_top.v|
+!i113 1
+R7
+vsha256
+R11
+!i10b 1
+!s100 ;c@LWbCVU=e5JZ2hXU8]<2
+R2
+Iz09KG9mU6Pk_P`nhi0lNe0
+R3
+R0
+w1772901011
+8sha256.v
+Fsha256.v
+!i122 69
+L0 18 343
+R5
+r1
+!s85 0
+31
+R14
+!s107 sha256.v|
+!s90 sha256.v|
+!i113 1
+R7
+vsha256_test
+!s110 1772901019
+!i10b 1
+!s100 U_A7D_eg[HV_8NcBX6h3B1
+R2
+IG:l^^A>3e6H[6WcS[SN:`3
+R3
+R0
+w1772900943
+8sha256_test.v
+Fsha256_test.v
+!i122 29
+L0 6 132
+R5
+r1
+!s85 0
+31
+!s108 1772901019.000000
+!s107 sha256_test.v|sha256.v|
+!s90 sha256.v|sha256_test.v|
+!i113 1
+R7

@@ -1,0 +1,9 @@
+
+State Machine - |riscv_top|sha256:u_sha256|state
+Name state.FINAL state.COMPRESS state.EXPAND state.INIT_HASH state.PAD state.IDLE 
+state.IDLE 0 0 0 0 0 0 
+state.PAD 0 0 0 0 1 1 
+state.INIT_HASH 0 0 0 1 0 1 
+state.EXPAND 0 0 1 0 0 1 
+state.COMPRESS 0 1 0 0 0 1 
+state.FINAL 1 0 0 0 0 1 
