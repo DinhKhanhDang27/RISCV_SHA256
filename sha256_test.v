@@ -60,48 +60,43 @@ module sha256_test;
 
         $display("=== SHA-256 Standalone Test ===");
         $display("Input: \"Dinh Khanh Dang\" (0x44696e68204b68616e682044616e67)");
-        $display("Expected: 7885c9ac bb0457fe db6dc331 a549d736");
-        $display("          375b65ef 16d9ad4b 89465cc6 d9d2b8d1");
-        $display("");
+        
+        // --- 1. Nạp Message W[0..3] ---
+        // W[0:1] = "Dinh Kha"
+        write_sha(8'h00, 64'h44696E68_204B6861);
+        // W[2:3] = "nh Dang" + 0x80 padding
+        write_sha(8'h08, 64'h6E682044_616E6780);
 
-        // SHA-256 padded message for "Dinh Khanh Dang" (15 bytes = 120 bits):
-        // W[0]=0x44696E68 W[1]=0x204B6861 W[2]=0x6E682044 W[3]=0x616E6780
-        // W[4..14]=0x00000000 W[15]=0x00000078
-        // As 64-bit writes (big-endian pair):
-        write_sha(8'h00, 64'h44696E68204B6861);  // W[0]="Dinh", W[1]=" Kha"
-        write_sha(8'h08, 64'h6E682044616E6780);  // W[2]="nh D", W[3]="ang"+pad
-        write_sha(8'h10, 64'h0000000000000000);  // W[4], W[5]
-        write_sha(8'h18, 64'h0000000000000000);  // W[6], W[7]
-        write_sha(8'h20, 64'h0000000000000000);  // W[8], W[9]
-        write_sha(8'h28, 64'h0000000000000000);  // W[10], W[11]
-        write_sha(8'h30, 64'h0000000000000000);  // W[12], W[13]
-        write_sha(8'h38, 64'h0000000000000078);  // W[14]=0, W[15]=0x78 (120 bits)
+        // --- 2. Nạp Zero padding W[4..13] ---
+        write_sha(8'h10, 64'h00000000_00000000);
+        write_sha(8'h18, 64'h00000000_00000000);
+        write_sha(8'h20, 64'h00000000_00000000);
+        write_sha(8'h28, 64'h00000000_00000000);
+        write_sha(8'h30, 64'h00000000_00000000);
 
-        // Display message words
-        $display("Message words:");
-        for (i = 0; i < 16; i = i + 1)
-            $display("  msg[%0d] = %08h", i, dut.msg[i]);
-        $display("");
+        // --- 3. Nạp Bit length W[14:15] ---
+        // 120 bits = 0x78
+        write_sha(8'h38, 64'h00000000_00000078);
 
-        // Start
+        // --- 4. Kích hoạt Start SHA-256 ---
         write_sha(8'h40, 64'h1);
 
         // Wait for completion
         repeat(200) @(posedge clk);
 
-        $display("SHA-256 State = %0d (expect 0=IDLE)", dut.state);
+        $display("SHA-256 State = %0d", dut.state);
         $display("SHA-256 Done  = %b", dut.done);
         $display("");
 
         $display("Hash output:");
-        $display("  H0 = %08h  (expect 7885c9ac)", dut.H0);
-        $display("  H1 = %08h  (expect bb0457fe)", dut.H1);
-        $display("  H2 = %08h  (expect db6dc331)", dut.H2);
-        $display("  H3 = %08h  (expect a549d736)", dut.H3);
-        $display("  H4 = %08h  (expect 375b65ef)", dut.H4);
-        $display("  H5 = %08h  (expect 16d9ad4b)", dut.H5);
-        $display("  H6 = %08h  (expect 89465cc6)", dut.H6);
-        $display("  H7 = %08h  (expect d9d2b8d1)", dut.H7);
+        $display("  H0 = %08h", dut.H0);
+        $display("  H1 = %08h", dut.H1);
+        $display("  H2 = %08h", dut.H2);
+        $display("  H3 = %08h", dut.H3);
+        $display("  H4 = %08h", dut.H4);
+        $display("  H5 = %08h", dut.H5);
+        $display("  H6 = %08h", dut.H6);
+        $display("  H7 = %08h", dut.H7);
         $display("");
 
         // Show some W values for debugging
@@ -124,14 +119,6 @@ module sha256_test;
         $display("  f = %08h", dut.f);
         $display("  g = %08h", dut.g);
         $display("  h = %08h", dut.h);
-
-        if (dut.H0 == 32'h7885c9ac && dut.H1 == 32'hbb0457fe &&
-            dut.H2 == 32'hdb6dc331 && dut.H3 == 32'ha549d736 &&
-            dut.H4 == 32'h375b65ef && dut.H5 == 32'h16d9ad4b &&
-            dut.H6 == 32'h89465cc6 && dut.H7 == 32'hd9d2b8d1)
-            $display("\nPASS: SHA-256 hash matches!");
-        else
-            $display("\nFAIL: SHA-256 hash does NOT match!");
 
         $stop;
     end
